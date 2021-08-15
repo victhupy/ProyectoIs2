@@ -1,0 +1,12 @@
+<div class="container text-dark mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-5 p-3">
+            <h1>Gestor de proyecto login</h1>
+            {% if user.is_authenticated %}
+                <p>Bienvenido, {{user.username}}</p>
+            {% else %}
+                <p>Bienvenido, logeate</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
