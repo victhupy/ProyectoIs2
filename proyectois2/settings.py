@@ -86,8 +86,12 @@ WSGI_APPLICATION = 'proyectois2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'projectbd',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -130,8 +134,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-SITE_ID = 2
+SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
+#configuracion adicional
+SOCIALACCOUNT_QUERY_EMAIL = True
+#ACCOUNT_LOGOUT_ON_GET= True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_REQUIRED = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
 SOCIALACCOUNT_PROVIDERS = {
     'google':{
         'SCOPE':[

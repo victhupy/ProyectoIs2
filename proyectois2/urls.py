@@ -22,3 +22,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google':{
+        'SCOPE':[
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'acces_type' : 'online',
+        }
+    }
+}
